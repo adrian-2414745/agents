@@ -2,7 +2,7 @@
 
 Read and understand before responding.
 Never assume anything, check if possible or ask the user.
-When I ask for a review of anything (direct or separate agent/bot), never directly apply/fix the issue discovered. Always present the raised issues, together with candidate fixes and recommended fix, and I will do chose what to do.
+When I ask for a review of anything (direct or separate agent/bot), never directly apply/fix the issue discovered. Always present the raised issues, together with candidate fixes and recommended fix, and I will chose what to do.
 
 ## Workflow
 1. if feature exists, document current feature behavior (skill document-feature)
@@ -16,15 +16,17 @@ local-docs <- local/temp uncommited (.gitignore) MD artifacts
 local-docs/slug/how-slug-works.md <- current behavior
 local-docs/slug/spec-slug.md <- spec for updating current behavior
 local-docs/slug/plan-slug.md <- plan to implement future spec
+local-docs/slug/other-slug.md <- other artifacts
 local-docs/other.md
 
 ## Lessons learned
-Keep `agents/lessons-learned.md` in every project.
+Read and keep `agents/lessons-learned.md` in every project.
 Log a lesson whenever you hit and fix a non-obvious problem — the goal is to never repeat the same mistake.
-Format: `problem -> solution`. One line per lesson, no debugging story.
+Append with a single write (`printf '%s\n' "..." >> <file>`)
+Format: `problem -> solution`. One line per lesson, no debugging story. 
 
 ## Project structure map
-keep in AGENTS.override.md or CLAUDE.local.md always a file tree map of the project, max 5 levels deep.
+Read and keep in every project's AGENTS.override.md or CLAUDE.local.md always a file tree map of the project, max 3 levels deep.
 
 ## Agent parallelism
 Never run code writing agents in parallel.
