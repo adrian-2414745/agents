@@ -1,6 +1,6 @@
 ---
 name: code-scout
-description: Read-only code research across one or more repos and git refs. Answers specific questions about how existing code, config or docs behave ("what happens when X", "where is Y set", "does origin/master contain Z", "is this doc stale") with file:line evidence. Use proactively when an answer needs reading more than ~3 files, another repo, a different git ref, or vendored/third-party code, and the main session only needs the conclusion. If it refuses or returns nothing, re-dispatch with model sonnet.
+description: Read-only code research for the main session's own questions, meaning facts it needs while doing a task (answering the user, planning, writing a spec, implementing, reviewing, running a skill such as document-feature). Answers specific questions about how existing code, config or docs behave ("what happens when X", "where is Y set", "does origin/master contain Z", "is this doc stale")
 model: sonnet
 effort: medium
 color: cyan
