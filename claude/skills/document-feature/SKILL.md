@@ -4,11 +4,11 @@ description: Document how an existing feature works — file index, types, compo
 argument-hint: feature name or description
 ---
 
-Document how the feature "$ARGUMENTS" currently works in this project. The deliverables (kebab-case slug derived from the feature name), placed at the repository root unless the user specified another name or location:
+Document how the feature "$ARGUMENTS" currently works in this project. The deliverables (kebab-case slug derived from the feature name), placed in `local-docs/<feature-slug>/` (create it if missing) unless the user specified another name or location:
 
-- `how-<feature-slug>-works.md` — the main document
-- `data-flow-<feature-slug>-mermaid.md` — mermaid diagram(s) of the data flow
-- `component-diagram-<feature-slug>-mermaid.md` — mermaid diagram of the components and their dependencies
+- `local-docs/<feature-slug>/how-<feature-slug>-works.md` — the main document
+- `local-docs/<feature-slug>/data-flow-mermaid-<feature-slug>.md` — mermaid diagram(s) of the data flow
+- `local-docs/<feature-slug>/component-diagram-mermaid-<feature-slug>.md` — mermaid diagram of the components and their dependencies
 
 ## Goal
 
@@ -35,10 +35,10 @@ Table: path | role (one line each). Group by layer (entry point / logic / types 
 The core types/models/schemas with their fields (only fields that matter), where each is defined, and how they map to storage or wire formats.
 
 ## Components
-The main functions/classes/modules/services and their responsibilities. For each: what it does, what it depends on, who calls it. Link to `component-diagram-<feature-slug>-mermaid.md`.
+The main functions/classes/modules/services and their responsibilities. For each: what it does, what it depends on, who calls it. Link to `component-diagram-mermaid-<feature-slug>.md`.
 
 ## Data Flow
-Step-by-step trace of the main path(s), referencing files and symbol names (e.g. `src/billing/invoice.ts` → `createInvoice()`) — never line numbers, they go stale. Cover important branches: error paths, empty/edge cases, feature flags. Link to `data-flow-<feature-slug>-mermaid.md`.
+Step-by-step trace of the main path(s), referencing files and symbol names (e.g. `src/billing/invoice.ts` → `createInvoice()`) — never line numbers, they go stale. Cover important branches: error paths, empty/edge cases, feature flags. Link to `data-flow-mermaid-<feature-slug>.md`.
 
 ## Interactions
 External touchpoints: APIs called, events published/consumed, DB collections/tables, queues, other features that depend on this one or that this one depends on.
@@ -53,8 +53,8 @@ Adapt sections to the project — drop ones that don't apply (e.g. no persistenc
 
 Both diagram files are markdown with fenced ```mermaid blocks so they render on GitHub and in IDEs.
 
-- `data-flow-<feature-slug>-mermaid.md`: a sequence diagram (or flowchart where there is no request/response shape) of the main path(s) traced in Data Flow. Use one diagram per trigger if the paths differ significantly.
-- `component-diagram-<feature-slug>-mermaid.md`: a graph of the components and their dependencies (calls/imports), grouped by layer where helpful.
+- `data-flow-mermaid-<feature-slug>.md`: a sequence diagram (or flowchart where there is no request/response shape) of the main path(s) traced in Data Flow. Use one diagram per trigger if the paths differ significantly.
+- `component-diagram-mermaid-<feature-slug>.md`: a graph of the components and their dependencies (calls/imports), grouped by layer where helpful.
 
 Node and participant labels must be real file/type/function names — the diagrams are subject to the same verification as the main document. Skip a diagram only if the feature is too small for it to add anything (say so in the main document instead of emitting a trivial diagram).
 

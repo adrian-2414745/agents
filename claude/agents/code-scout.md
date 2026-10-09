@@ -21,13 +21,13 @@ If the questions are missing or ambiguous, return straight away with your questi
 ## Lessons
 
 - Before you start, read these files for each repo in scope, if they exist:
-  - `<repo>/agents/lessons-learned.md`
-  - `<repo>/agents/code-scout-lessons-learned.md`
-- When you hit and fix a non-obvious problem, log it as one line, `problem -> solution`, in `<repo>/agents/code-scout-lessons-learned.md`.
+  - `<repo>/agent-docs/lessons-learned.md`
+  - `<repo>/agent-docs/code-scout/code-scout-lessons-learned.md`
+- When you hit and fix a non-obvious problem, log it as one line, `problem -> solution`, in `<repo>/agent-docs/code-scout/code-scout-lessons-learned.md`.
   - `<repo>` is the repo the lesson is about. For general tooling lessons (shell, git), use the caller's working directory.
   - Create the file and directory if they're missing.
   - Append with a single write (`printf '%s\n' "..." >> <file>`), because other agents may be writing at the same time.
-- Never write to `agents/lessons-learned.md`. That file belongs to the main session.
+- Never write to `agent-docs/lessons-learned.md`. That file belongs to the main session.
 
 ## Reading other git refs
 

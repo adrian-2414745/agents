@@ -6,7 +6,7 @@ argument-hint: [specification file][plan]
 
 
 Create the implementation plan from the given specification: "$ARGUMENTS"
-If a plan file was also referenced, use that as a starting poing for the solution design, else create plan-<slug>.md
+If a plan file was also referenced, use that as a starting poing for the solution design, else create `local-docs/<slug>/plan-<slug>.md` (next to the spec `local-docs/<slug>/spec-<slug>.md`)
 
 ## General code design rules
 1. CLEAN architecture style
@@ -18,7 +18,7 @@ If a plan file was also referenced, use that as a starting poing for the solutio
 
 ## Plan creation process
 1. read and understand: how the code is structured and works now, the new specification.
-2. write the initial plan-<slug>.md
+2. write the initial `local-docs/<slug>/plan-<slug>.md`
 3. raise any open questions and wait for answers
 4. integrate the answers back into the plan
 5. Launch a sonnet review agent to review the plan: check consistency/contradictions

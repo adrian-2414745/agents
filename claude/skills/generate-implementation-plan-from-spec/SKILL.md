@@ -6,7 +6,7 @@ argument-hint: [specification file][plan]
 
 
 Create the implementation plan from the given specification: "$ARGUMENTS"
-If a plan file was also referenced, use that as a starting poing for the solution design, else create plan-<slug>.md
+If a plan file was also referenced, use that as a starting poing for the solution design, else create `local-docs/<slug>/plan-<slug>.md` (next to the spec `local-docs/<slug>/spec-<slug>.md`)
 
 ## General code design rules
 1. CLEAN architecture style
@@ -18,15 +18,15 @@ If a plan file was also referenced, use that as a starting poing for the solutio
 
 ## Plan creation process
 1. read and understand: how the code is structured and works now, the new specification.
-   - Prefer reading/linking the existing `how-<slug>-works.md` (current-state doc) over re-describing current behaviour. If no such doc exists and the current state is non-trivial, write one first, then reference it from the plan.
-2. write the initial plan-<slug>.md
+   - Prefer reading/linking the existing `local-docs/<slug>/how-<slug>-works.md` (current-state doc) over re-describing current behaviour. If no such doc exists and the current state is non-trivial, write one first, then reference it from the plan.
+2. write the initial `local-docs/<slug>/plan-<slug>.md`
 3. raise any open questions and wait for answers
 4. integrate the answers back into the plan
 5. Launch a sonnet review agent to review the plan: check consistency/contradictions
 6. Present the review findings together with solutions and the recommended one to the user as a wizard. Let the user choose the final solution and integrate the responses back into the plan. Never auto-apply review fixes (user should be kept in the loop).
 
 ## Plan format
-1. Plan starts with context section describing in natural language, in short form each of: the current state/problem, reference to the spec file, reference to the relevant `how-<slug>-works.md` doc(s), the proposed high-level architecture/design solution.
+1. Plan starts with context section describing in natural language, in short form each of: the current state/problem, reference to the spec file, reference to the relevant `local-docs/<slug>/how-<slug>-works.md` doc(s), the proposed high-level architecture/design solution.
 2. The plan should be composed of smaller tasks, ordered logically **so that each task compiles on its own**, progress tracked by ticking checkboxes [x].
 3. Each task has: implementation description, tests to add/adapt, verification steps (compile, run tests).
 4. Highlight the changes/updates/removals of data types (model, dbo, dto) and trait/interfaces (see Components and Data Model below).

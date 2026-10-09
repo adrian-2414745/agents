@@ -4,10 +4,10 @@ description: Document an entire project for onboarding — responsibilities, ent
 argument-hint: optional focus areas or emphasis (leave empty for full project)
 ---
 
-Document how this project works, end to end, for someone joining it. If "$ARGUMENTS" is non-empty, treat it as areas to emphasize — still cover the whole project, but go deeper there. The deliverables (kebab-case slug derived from the project/repo name), placed at the repository root unless the user specified another name or location:
+Document how this project works, end to end, for someone joining it. If "$ARGUMENTS" is non-empty, treat it as areas to emphasize — still cover the whole project, but go deeper there. The deliverables (kebab-case slug derived from the project/repo name), placed in `agent-docs/` (committed; create it if missing) unless the user specified another name or location:
 
-- `onboarding-<project-slug>.md` — the main document
-- `component-diagram-<project-slug>-mermaid.md` — mermaid diagram of the main components/modules and their dependencies
+- `agent-docs/onboarding-<project-slug>.md` — the main document
+- `agent-docs/component-diagram-mermaid-<project-slug>.md` — mermaid diagram of the main components/modules and their dependencies
 
 ## Goal
 
@@ -40,7 +40,7 @@ Every way work enters the system, grouped by kind:
 For each: trigger → handler file/symbol → one line on what happens.
 
 ## Components / Modules
-The main modules/packages/services and their responsibilities. For each: what it owns, what it depends on, who calls it. Link to `component-diagram-<project-slug>-mermaid.md`.
+The main modules/packages/services and their responsibilities. For each: what it owns, what it depends on, who calls it. Link to `component-diagram-mermaid-<project-slug>.md`.
 
 ## Data & External Systems
 Databases (collections/tables that matter), caches, queues/topics published to, third-party and internal APIs called. For each: purpose and where the client/repository code lives.
@@ -62,6 +62,6 @@ Adapt sections to the project — drop ones that don't apply (e.g. no scheduled 
 
 ## Companion diagram
 
-`component-diagram-<project-slug>-mermaid.md` is markdown with a fenced ```mermaid block so it renders on GitHub and in IDEs: a graph of the main modules/components and their dependencies (calls/imports), grouped by layer or deployable service where helpful. Include external systems (DBs, queues, APIs) as distinct nodes at the boundary.
+`component-diagram-mermaid-<project-slug>.md` is markdown with a fenced ```mermaid block so it renders on GitHub and in IDEs: a graph of the main modules/components and their dependencies (calls/imports), grouped by layer or deployable service where helpful. Include external systems (DBs, queues, APIs) as distinct nodes at the boundary.
 
 Node labels must be real file/module/type/function names — the diagram is subject to the same verification as the main document. Skip it only if the project is too small for it to add anything (say so in the main document instead of emitting a trivial diagram).

@@ -29,12 +29,12 @@ You run verification checks in a repo and report the results compactly. You neve
 ## Lessons
 
 - Before you start, read these files, if they exist:
-  - `<repo>/agents/lessons-learned.md`
-  - `<repo>/agents/verifier-lessons-learned.md`
-- When you hit and fix a non-obvious problem, log it as one line, `problem -> solution`, in `<repo>/agents/verifier-lessons-learned.md`. Examples: a check that needs an env var, a command that hangs, a flaky suite.
+  - `<repo>/agent-docs/lessons-learned.md`
+  - `<repo>/agent-docs/verifier/verifier-lessons-learned.md`
+- When you hit and fix a non-obvious problem, log it as one line, `problem -> solution`, in `<repo>/agent-docs/verifier/verifier-lessons-learned.md`. Examples: a check that needs an env var, a command that hangs, a flaky suite.
   - Create the file and directory if they're missing.
   - Append with a single write (`printf '%s\n' "..." >> <file>`).
-- Never write to `agents/lessons-learned.md`. That file belongs to the main session.
+- Never write to `agent-docs/lessons-learned.md`. That file belongs to the main session.
 
 ## Rules
 
