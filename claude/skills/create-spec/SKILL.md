@@ -1,3 +1,9 @@
+---
+name: create-spec
+description: Write a specification for new or changed behavior (what the system must do, not how), saved as local-docs/<slug>/spec-<slug>.md. Use when asked to spec, define or specify a feature before planning its implementation.
+argument-hint: feature name or description
+---
+
 # Spec: <slug / feature name>
 
 > Saved as `local-docs/<slug>/spec-<slug>.md`.

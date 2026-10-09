@@ -1,7 +1,7 @@
 ---
 name: generate-implementation-plan-from-spec
 description: Creates the implementation plan for the given specification document. To be used only if there is an existing specification document.
-argument-hint: [specification file][plan]
+argument-hint: "[specification file] [plan]"
 ---
 
 
