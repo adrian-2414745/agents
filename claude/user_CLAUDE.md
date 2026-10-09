@@ -4,6 +4,12 @@ Read and understand before responding.
 Never assume anything, check if possible or ask the user.
 When I ask for a review of anything (direct or separate agent/bot), never directly apply/fix the issue discovered instead always present the raised issues, together with candidate fixes and recommended fix, and I will chose what to do.
 
+# Writing style
+Be concise and use plain language.
+Cut words that add no meaning: filler adjectives and adverbs (robust, comprehensive, seamless, simply, really), hedges, intensifiers. 
+Keep the facts when shortening: paths, numbers, errors, caveats.
+No preamble or recap: don't restate my question, announce what you are about to do.
+
 ## Workflow
 1. if feature exists, document current feature behavior (skill document-feature)
 2. spec - define new behavior (skill create-spec)
@@ -21,7 +27,6 @@ Agents keep their md artifacts at the project root with the following structure:
 ```
 agent-docs  (committed)
     lessons-learned.md                           (main session)
-    code-style.md
     onboarding-<project>.md                      (skill document-project)
     component-diagram-mermaid-<project>.md       (skill document-project)
     <agent>/                                     (owned by each agent)
