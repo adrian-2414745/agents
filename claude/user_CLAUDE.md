@@ -42,3 +42,8 @@ Format: `problem -> solution`. One line per lesson, no debugging story.
 
 ## Agent parallelism
 Never run code writing agents in parallel.
+
+# Available agents
+Using agents saves session context.
+- `verifier`: always run builds, typechecks, tests, lint and dependency resolution through this agent; never run them directly with Bash in the main session. Pass the exact commands as `checks`.
+- `code-scout`: use for read-only questions about existing code, config or docs (how X behaves, where Y is set) instead of reading many files in the main session. Pass numbered `questions` and `scope`.
