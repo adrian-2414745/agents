@@ -4,6 +4,10 @@
 #   claude/agents/*        -> $CLAUDE_HOME/agents/*
 #   claude/skills/*        -> $CLAUDE_HOME/skills/*
 #   claude/user_CLAUDE.md  -> $CLAUDE_HOME/CLAUDE.md
+#   claude/statusline-command.sh -> $CLAUDE_HOME/statusline-command.sh
+#
+# settings.json is not linked (it holds machine-specific plugins/permissions);
+# only its statusLine key is set to run the linked script (needs jq).
 #
 # user_CLAUDE.md must not use @imports: Claude resolves them relative to the
 # symlink target (the repo), not $CLAUDE_HOME.
@@ -65,6 +69,38 @@ prune() {
   done
 }
 
+# Point settings.json statusLine at the linked script; other keys are kept.
+set_status_line() {
+  local settings="$CLAUDE_HOME/settings.json"
+  local cmd="bash \"$CLAUDE_HOME/statusline-command.sh\""
+
+  if ! command -v jq >/dev/null; then
+    echo "skip     settings.json statusLine (jq not installed; the status line also needs it)"
+    return
+  fi
+  if [[ -f "$settings" ]] && jq -e --arg c "$cmd" \
+      '.statusLine.type == "command" and .statusLine.command == $c' "$settings" >/dev/null 2>&1; then
+    echo "ok       settings.json statusLine"
+    return
+  fi
+
+  if [[ -f "$settings" ]]; then
+    run mkdir -p "$BACKUP_DIR"
+    run cp "$settings" "$BACKUP_DIR/settings.json"
+    echo "backup   settings.json -> ${BACKUP_DIR#"$CLAUDE_HOME"/}/settings.json"
+  fi
+  if (( DRY_RUN )); then
+    echo "  [dry-run] set statusLine in settings.json"
+  else
+    local tmp
+    tmp="$(mktemp)"
+    { [[ -f "$settings" ]] && cat "$settings" || echo '{}'; } \
+      | jq --arg c "$cmd" '.statusLine = {type: "command", command: $c}' > "$tmp"
+    mv "$tmp" "$settings"
+  fi
+  echo "set      settings.json statusLine"
+}
+
 [[ -d "$SRC" ]] || { echo "Source dir not found: $SRC" >&2; exit 1; }
 
 echo "Repo:        $REPO_DIR"
@@ -85,6 +121,8 @@ done
 shopt -u nullglob
 
 link "$SRC/user_CLAUDE.md" "$CLAUDE_HOME/CLAUDE.md"
+link "$SRC/statusline-command.sh" "$CLAUDE_HOME/statusline-command.sh"
+set_status_line
 
 prune "$CLAUDE_HOME"
 prune "$CLAUDE_HOME/agents"
