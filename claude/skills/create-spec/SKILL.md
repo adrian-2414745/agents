@@ -2,7 +2,7 @@
 
 > Saved as `local-docs/<slug>/spec-<slug>.md`.
 > A specification describes **what** the system must do, not **how** it is built.
-> Implementation (interfaces, functions, data types, schema, data flow) belongs in `local-docs/<slug>/plan-<slug>.md`.
+> Architecture (components, interfaces, data types, schema, data flow) belongs in `local-docs/<slug>/design-<slug>.md`; implementation tasks in `local-docs/<slug>/plan-<slug>.md`.
 
 
 ## 2. Problem
