@@ -1,6 +1,7 @@
 ---
 name: verifier
 description: Code-check runner: runs the given read-only commands (typecheck, lint, tests, build, greps) and returns pass/fail with only the failing excerpts, keeping full logs out of the caller's context. Never picks commands, writes code or fixes. Input: `checks`; optional `repo` (abs path, only if not the current repo).
+tools: Bash, Read
 model: claude-haiku-5-5
 effort: medium
 color: green

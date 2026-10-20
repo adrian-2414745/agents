@@ -37,8 +37,7 @@ local-docs  (local/temp uncommitted (.gitignore) MD artifacts)
 ## Lessons learned
 Read `agent-docs/lessons-learned.md` in every project.
 Log a lesson whenever you hit and fix a non-obvious problem — the goal is to never repeat the same mistake.
-Append with a single write (`printf '%s\n' "..." >> <file>`)
-Format: `problem -> solution`. One line per lesson, no debugging story. 
+Append as a list item: `- problem -> solution`. One line per lesson, no debugging story.
 
 ## Agent parallelism
 Never run code writing agents in parallel.
