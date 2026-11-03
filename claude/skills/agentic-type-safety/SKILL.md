@@ -2,6 +2,7 @@
 name: agentic-type-safety
 description: Audit a project's type safety setup — typecheckers, compiler flags, linters, codegen checks, and the language features/patterns/libraries in use — and recommend what to add, ranked HIGH / MEDIUM-HIGH / MEDIUM-LOW / LOW, so coding agents can verify their own output (verifier runs, post-write hooks). Report only, never implements. Use when asked to audit, assess or improve type safety, strong typing, or agent verification checks for a project.
 argument-hint: optional "run" to also run the installed checks for baselines; optional focus (module, language)
+disable-model-invocation: true
 ---
 
 Audit how much this project's types and checks can catch, and recommend what to add. The goal is a fast, reliable verification loop for coding agents: after an agent writes code, a typechecker, compiler or linter should tell it what it got wrong, so it can fix the mistake before a human sees it.

@@ -5,33 +5,26 @@ Never assume anything, check if possible or ask the user.
 When I ask for a review of anything (direct or separate agent/bot), never directly apply/fix the issue discovered instead always present the raised issues, together with candidate fixes and recommended fix, and I will chose what to do.
 
 
-# Writing style
+### Writing style
 Be concise and use plain language.
 Cut words that add no meaning: filler adjectives and adverbs (robust, comprehensive, seamless, simply, really), hedges, intensifiers. 
 Keep the facts when shortening: paths, numbers, errors, caveats.
 No preamble or recap: don't restate my question, announce what you are about to do.
 
 
-
 ### Documentation
 Agents keep their md artifacts at the project root with the following structure:
 
 ```
-agent-docs  (committed)
+agent-docs/                                      (committed)
     lessons-learned.md                           (main session)
-    onboarding-<project>.md                      (skill document-project)
-    component-diagram-mermaid-<project>.md       (skill document-project)
+    onboarding-<project>.md  
+    component-diagram-mermaid-<project>.md
     <agent>/                                     (owned by each agent)
         <agent>-lessons-learned.md
-local-docs  (local/temp uncommitted (.gitignore) MD artifacts)
-    <slug>/
-        how-<slug>-works.md                      (current behavior, skill document-feature)
-        spec-<slug>.md                           (spec, skill create-spec)
-        design-<slug>.md                         (design, skill create-design)
-        plan-<slug>.md                           (implementation plan, skill create-plan)
-        <artifact>-<slug>.md                     (others: diagrams, scripts)
+local-docs/                                      (.gitignore MD artifacts)
+    <date-slug>/                                 (date: yyyy-mm-dd)
 ```
-
 
 
 ## Lessons learned

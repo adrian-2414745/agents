@@ -1,7 +1,8 @@
 ---
-name: document-project
+name: onboard-project
 description: Document an entire project for onboarding — responsibilities, entry points (API, consumers, scheduled jobs), main components/modules, data stores, deployments, with an index to the main files. Use when asked to document a project, create onboarding docs, or map a whole codebase/service for a new dev or LLM agent.
 argument-hint: optional focus areas or emphasis (leave empty for full project)
+disable-model-invocation: true
 ---
 
 Document how this project works, end to end, for someone joining it. If "$ARGUMENTS" is non-empty, treat it as areas to emphasize — still cover the whole project, but go deeper there. The deliverables (kebab-case slug derived from the project/repo name), placed in `agent-docs/` (committed; create it if missing) unless the user specified another name or location:

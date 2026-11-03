@@ -2,6 +2,7 @@
 name: document-feature
 description: Document how an existing feature works — file index, types, components, data flow, interactions — so a new dev or LLM agent can quickly get productive updating it, adding to it, or fixing bugs. Use when asked to document, explain, or map a feature/subsystem before modifying it.
 argument-hint: feature name or description
+disable-model-invocation: true
 ---
 
 Document how the feature "$ARGUMENTS" currently works in this project. The deliverables (kebab-case slug derived from the feature name), placed in `local-docs/<feature-slug>/` (create it if missing) unless the user specified another name or location:
