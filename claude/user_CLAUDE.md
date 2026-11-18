@@ -3,6 +3,7 @@
 Read and understand before responding.
 Never assume anything, check if possible or ask the user.
 When I ask for a review of anything (direct or separate agent/bot), never directly apply/fix the issue discovered instead always present the raised issues, together with candidate fixes and recommended fix, and I will chose what to do.
+Don't add comments in code.
 
 
 ### Writing style

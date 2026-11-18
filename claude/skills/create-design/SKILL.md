@@ -2,6 +2,7 @@
 name: create-design
 description: Create the high-level design for a reviewed spec, together with the user — first 2–3 prose proposals with pros/cons, then, for the adopted one, components, seams, APIs, contract formats (DTO/DBO), protocols, error handling between components/services, with diagrams. Sits between spec and plan. Use when asked to design a feature or before generating an implementation plan from a spec.
 argument-hint: "[specification file] [draft design file (optional)]"
+disable-model-invocation: true
 ---
 
 Create the design for the given specification: "$ARGUMENTS"

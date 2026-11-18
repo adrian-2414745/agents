@@ -2,6 +2,7 @@
 name: create-plan
 description: Creates the implementation plan (ordered tasks, tests, verification) from a reviewed spec and design. To be used only if both the specification and design documents exist.
 argument-hint: "[specification file] [design file] [plan file]"
+disable-model-invocation: true
 ---
 
 
